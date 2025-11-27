@@ -117,7 +117,7 @@ function toggleDarkBright() {
       <p>Découvrez la société PLS en <strong>1 minute :</strong><br> Notre métier, nos valeurs et notre engagement
         local.</p>
     </div>
-    <video src="./assets/video_presentation.mp4" controls autoplay muted loop></video>
+    <video src="" controls autoplay muted loop></video>
     <button id="contact">Prenez contact en moins de 2 minutes</button>
   </section>
   <section id="quality">
