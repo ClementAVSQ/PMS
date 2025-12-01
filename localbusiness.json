@@ -1,0 +1,21 @@
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "PMS - Propreté Maintenance Services",
+  "alternateName": "PMS",
+  "image": "src/assets/logo.png",
+  "telephone": "0489410807",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "151 rue Gilles Roberval",
+    "addressLocality": "Nîmes",
+    "postalCode": "30900",
+    "addressCountry": "FR"
+  },
+  "openingHoursSpecification": [],
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 43.8291623,
+    "longitude": 4.3342007
+  }
+}

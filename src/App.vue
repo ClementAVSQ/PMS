@@ -91,11 +91,11 @@ function toggleDarkBright() {
           <button><img src="./assets/icon_phone.svg" alt="icon tel" style="margin-right: 5px;"> 04 89 41 08 07</button>
         </div>
         <h1>PROPRETÉ MAINTENANCE SERVICES</h1>
-        <h3 id="pres">Des solution de nettoyage et de maintenance <span>sur mesure </span>
+        <h3 id="pres">Des solutions de nettoyage et de maintenance<span> sur mesure </span>
         </h3>
         <p><strong>30 ans d'expertise</strong> au service des entreprises <strong>du Gard et de l'Hérault</strong></p>
         <a href="#simulating"><button id="devis">Faites une simulation de tarifs</button></a>
-        <p><i>Devis gratuit, repide et sans engagement</i></p>
+        <p><i>Devis gratuit, rapide et sans engagement</i></p>
       </figcaption>
       <img src="./assets/presentation_guys.png" alt="illustration" id="illu">
     </figure>
@@ -120,7 +120,7 @@ function toggleDarkBright() {
       à chaque espace</p>
     <div id="optimized">
       <div class="card" v-for="(card, index) in quality_cards" :key="index">
-        <img :src="card.icon" alt="contenu futur" class="icon">
+        <img :src="card.icon" :alt="card.alt" class="icon">
         <h4>{{ card.title }}</h4>
         <p v-if="!responsive">{{ card.description }}</p>
       </div>
@@ -222,7 +222,7 @@ function toggleDarkBright() {
         </div>
       </div>
     </div>
-    <p>Politique de cookies - Mention légales</p>
+    <p>Politique de cookies - Mentions légales</p>
   </footer>
 </template>
 <style>
@@ -569,8 +569,9 @@ h4 {
 }
 
 .card {
+  
   width: 20%;
-  height: 65vh;
+  height: 700px;
   border-radius: 10px;
   background-color: #fff;
   filter: drop-shadow(0 0 5px rgba(0, 0, 0, .1));
@@ -579,8 +580,8 @@ h4 {
 }
 
 #optimized {
+  margin: 5% 0;
   width: 100%;
-  height: 60vh;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -588,7 +589,8 @@ h4 {
 }
 
 #quality {
-  height: 110vh;
+  height: fit-content;
+  padding: 5%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -695,19 +697,11 @@ p {
 h3 {
   font-size: var(--size-large);
   color: var(--primary-color);
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 10px;
+
 
 }
 
-#adjustement {
-  display: flex;
-  flex-direction: column;
-  justify-content: end;
-  margin-bottom: 5px;
-}
+
 
 
 h3 span {
@@ -751,6 +745,8 @@ figcaption {
 }
 
 figure {
+  overflow:hidden ;
+
   display: flex;
   flex-direction: row;
   justify-content: space-between;

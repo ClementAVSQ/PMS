@@ -13,7 +13,7 @@ export const useStore = defineStore('Store', {
             },
             {
                 icon: "./icon/gain.svg",
-                title: "GAIN DE TEMP ET DE BUDGET",
+                title: "GAIN DE TEMPS ET DE BUDGET",
                 alt: "économie",
                 description: "Des prestations optimisées vous permettent de réduire vos côuts tout en libérant du temps pour votre activité."
             },
@@ -53,7 +53,7 @@ export const useStore = defineStore('Store', {
         footer:[
             { img: "./icon/footer/ecolabel.svg",
               alt: "footer image",
-              title: "Produits certifiés Eco label",
+              title: "Produits certifiés Écolabel",
               position: true
             },
             { img: "./icon/footer/humanity.svg",
