@@ -8,6 +8,7 @@ let link_img = store.link_img_client;
 let quality_cards = store.quality_cards;
 let fake_advice = store.fake_advice;
 let footer_img = store.footer;
+let devis = store.devis_client;
 
 //checking du responsive pour les éléments qui sont sensé disparaitre sur petit écran
 let responsive = ref(false);
@@ -49,13 +50,6 @@ function decrementIndex() {
   }
 }
 
-//récuperation des données du formulaire
-const formData = reactive({
-  client: 'Collectivité',
-  Surface: 500,
-  Frequence: 1,
-  visiteurs: 1
-})
 
 //prévenir si il y a une erreur dans le formulaire
 function customError(event) {
@@ -69,7 +63,7 @@ function resetError(event) {
 
 //futur logique de calcul de prix
 const fake_price = computed(() => {
-  return Math.round((2.25 * formData.Surface * formData.Frequence).toFixed(2));
+  return Math.round((2.25 * devis.surface * devis.frequence).toFixed(2));
 });
 
 // Booléen pour alterner entre darker et brighter
@@ -96,9 +90,8 @@ function toggleDarkBright() {
           <img src="./assets/logo.png" alt="logo PMS" id="logo">
           <button><img src="./assets/icon_phone.svg" alt="icon tel" style="margin-right: 5px;"> 04 89 41 08 07</button>
         </div>
-        <h1>PMS-PROPRETÉ MAINTENANCE SERVICES</h1>
+        <h1>PROPRETÉ MAINTENANCE SERVICES</h1>
         <h3 id="pres">Des solution de nettoyage et de maintenance <span>sur mesure </span>
-          <h3 v-if="!responsive"> pour vos locaux professionnels</h3>
         </h3>
         <p><strong>30 ans d'expertise</strong> au service des entreprises <strong>du Gard et de l'Hérault</strong></p>
         <a href="#simulating"><button id="devis">Faites une simulation de tarifs</button></a>
@@ -159,12 +152,12 @@ function toggleDarkBright() {
           <label for="client">
             <p>Spécificité des locaux</p>
           </label>
-          <select id="client" v-model="formData.client">
-            <option value="Collectivité">Collectivité</option>
-            <option value="administration">administrations</option>
+          <select id="client" v-model="devis.locaux" >
+            <option value="Collectivité">Collectivités</option>
+            <option value="administration">Administrations</option>
             <option value="Copropriétés">Copropriétés</option>
-            <option value="bureaux">bureaux</option>
-            <option value="autre">autre</option>
+            <option value="bureaux">Bureaux</option>
+            <option value="autre">Autres</option>
           </select>
         </div>
         <div class="parameter">
@@ -172,22 +165,22 @@ function toggleDarkBright() {
             <p>Surface des locaux en m²</p>
           </label>
           <div id="Surface">
-            <input type="number" id="Surfaceinput" min="0" max="1000" v-model.number="formData.Surface"
+            <input type="number" id="Surfaceinput" min="0" max="1000" v-model.number="devis.surface"
               @invalid="customError" @input="resetError()" />
-            <input type="range" id="SurfaceRange" min="0" max="1000" v-model.number="formData.Surface" />
+            <input type="range" id="SurfaceRange" min="0" max="1000" v-model.number="devis.surface" />
           </div>
         </div>
         <div class="parameter">
           <label for="frequence">
             <p>Fréquence d'intervention</p>
           </label>
-          <input type="range" id="SurfaceRange" min="0" max="10" v-model.number="formData.Frequence" />
+          <input type="range" id="SurfaceRange" min="0" max="10" v-model.number="devis.frequence" />
         </div>
         <div class="parameter">
           <label for="visiteur">
             <p>Fréquence quotidienne des visiteurs?</p>
           </label>
-          <input type="range" id="SurfaceRange" min="0" max="5" v-model.number="formData.visiteurs" />
+          <input type="range" id="SurfaceRange" min="0" max="5"/>
 
         </div>
 
@@ -196,7 +189,7 @@ function toggleDarkBright() {
 
     </div>
     <div id="result">
-      <div id="estimation" v-if="fake_price !== 0">
+      <div id="estimation" >
         <h1>Votre estimation :</h1>
         <h4><strong>{{ fake_price }}€ </strong>HT/mois</h4>
         <p><i>Montant estimé donné à titre indicatif</i></p>
@@ -609,7 +602,7 @@ button {
 }
 
 #logo {
-  width: 150px;
+  width: 300px;
   height: auto
 }
 

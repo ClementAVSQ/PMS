@@ -71,7 +71,13 @@ export const useStore = defineStore('Store', {
               title: "Matériel professionnel & technologies avancées",
                 position: false
             }
-        ]
+        ],
+        devis_client:{
+            surface:0,
+            frequence:0,
+            mail:"",
+            locaux:""
+        }
 
     }),
     actions: {
