@@ -3,4 +3,4 @@ Disallow: /admin/
 Disallow: /private/
 Allow: /
 
-Sitemap: https://pms-snowy.vercel.app/sitemap.xml
+Sitemap: https://pms-sage-five.vercel.app/sitemap.xml
