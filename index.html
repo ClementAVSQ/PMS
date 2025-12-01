@@ -11,17 +11,19 @@
 <body style="margin: 0;padding: 0; min-height: 100vh;">
   <div id="app"></div>
   <script type="module" src="/src/main.js"></script>
+  
+  <!-- Load JSON-LD for SEO -->
+  <script>
+    fetch('localbusiness.json')
+      .then(response => response.json())
+      .then(data => {
+        const script = document.createElement('script');
+        script.type = 'application/ld+json';
+        script.text = JSON.stringify(data);
+        document.head.appendChild(script);
+      })
+      .catch(error => console.error('Erreur en chargeant le JSON-LD:', error));
+  </script>
 </body>
-<script>
-  fetch('localbusiness.json')
-    .then(response => response.json())
-    .then(data => {
-      const script = document.createElement('script');
-      script.type = 'application/ld+json';
-      script.text = JSON.stringify(data);
-      document.head.appendChild(script);
-    })
-    .catch(error => console.error('Erreur en chargeant le JSON-LD:', error));
-</script>
 
 </html>

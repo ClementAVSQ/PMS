@@ -1,5 +1,4 @@
 import { defineStore } from 'pinia'
-const ecolabel = new URL('./icon/footer/ecolabel.svg', import.meta.url).href;
 
 export const useStore = defineStore('Store', {
     state: () => ({
@@ -71,13 +70,7 @@ export const useStore = defineStore('Store', {
               title: "Matériel professionnel & technologies avancées",
                 position: false
             }
-        ],
-        devis_client:{
-            surface:0,
-            frequence:0,
-            mail:"",
-            locaux:""
-        }
+        ]
 
     }),
     actions: {
