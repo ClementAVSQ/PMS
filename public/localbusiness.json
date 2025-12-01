@@ -3,7 +3,7 @@
   "@type": "LocalBusiness",
   "name": "PMS - Propreté Maintenance Services",
   "alternateName": "PMS",
-  "image": "src/assets/logo.png",
+  "image": "/logo_client/Groupe_PA.svg",
   "telephone": "0489410807",
   "address": {
     "@type": "PostalAddress",
